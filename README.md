@@ -1,4 +1,3 @@
-# DPred  
 1. Description  
 This is a novel computational tool for predicting Dihydrouridine (D) sites over mRNA sequences. This modification can serve as a metabolic modulator for various pathological conditions, and its elevated levels in tumors are associated with a series of cancers. Precise identification of D sites on RNA is vital for understanding its biological function. DPred was maily built upon the additive local self-attention and convolutional neural network architecture. 
 

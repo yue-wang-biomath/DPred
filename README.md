@@ -13,6 +13,6 @@ scikit-learn = 1.1.1
 keras_self_attention = 0.51.0  
 keras = 2.10.0  
 
-3.Results  
+3. Results  
 Please prepare a Fasta file including 41 nt sequences. In the center of a sequence should be a potential D site to be evaluated.  
 The prediction results are summarized in the file results file, including four columns of 'Sequence ID', 'Sequence', 'Probability' and 'Prediction Result'.

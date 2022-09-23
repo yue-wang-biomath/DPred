@@ -70,7 +70,7 @@ def DPred_model():
     model.add(Dropout(0.1))
     model.add(Dense(100, activation='sigmoid'))
     model.add(Dense(num_classes, activation='softmax'))  # num_classes = 2
-    model.compile(optimizer=keras.optimizers.Adam(lr = lr), loss='categorical_crossentropy',  metrics=['accuracy']) # lr = 0.00001
+    model.compile(optimizer=keras.optimizers.Adam(lr = lr), loss='categorical_crossentropy',  metrics=['accuracy']) # lr = 0.0001
     return model
 
 def Aucs(X_test, model, y_test):

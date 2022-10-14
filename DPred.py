@@ -65,7 +65,7 @@ def DPred_model():
     model.add(SeqSelfAttention(attention_activation='softmax', attention_width = 2))
     model.add(Dense(64, activation='relu'))
     model.add(tf.keras.layers.Reshape((window_half*2+1, element_size, 1),))
-    model.add(Conv2D(100, (2, 2), strides=(2, 2),padding = 'same', activation='relu', input_shape=(window_half*2+1, element_size, 1)))
+    model.add(Conv2D(64, (2, 2), strides=(2, 2),padding = 'same', activation='relu', input_shape=(window_half*2+1, element_size, 1)))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=(1, 1)))
     model.add(Flatten())
     model.add(Dropout(0.1))

@@ -76,9 +76,8 @@ def DPred_model():
 
 def Aucs(X_test, model, y_test):
     prediction = model(X_test) #X_test here is the output of readFile_x
-    y_hat_test = np.argmax(prediction, axis=1)
-    y_label = np.argmax(y_test, axis = 1)
-    AUC = roc_auc_score(y_label, y_hat_test) #y_test here is the output of readFile_y
+    y_label = np.argmax(y_test, axis = 1) #y_test here is the output of readFile_y
+    AUC = roc_auc_score(y_label, prediction[:, 1]) 
     return AUC
 
 def Mccs(X_test, model, y_test):

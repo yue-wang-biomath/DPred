@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # _*_coding:utf-8_*_
 
-#Codes for Transformer were implemented with Pytorch 1.2
+# Codes for Transformer were implemented with Pytorch 1.2
 # Transformer
 import numpy as np
 import torch 

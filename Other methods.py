@@ -205,7 +205,7 @@ class Transformer(nn.Module):
         x = self.model(x)
         return x
     
-#Codes for ResNet were implemented with Tensorflow = 2.10.0
+# Codes for ResNet were implemented with Tensorflow = 2.10.0
 # ResNet 
 import numpy as np
 from keras import layers

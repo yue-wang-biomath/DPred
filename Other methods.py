@@ -295,6 +295,6 @@ def ResNet(input_shape = (41, 4, 1), classes = 2):
     model = Model(inputs = X_input, outputs = X, name='ResNet')
     
     return model
- \
+ 
     
     

@@ -63,13 +63,14 @@ def DPred_model():
     model = tf.keras.models.Sequential()
     model.add(keras.layers.Masking(mask_value=1, input_shape=(window_half*2+1, element_size))) # window_half = 20, element_size = 4
     model.add(SeqSelfAttention(attention_activation='softmax', attention_width = 2))
-    model.add(Dense(64, activation='relu'))
-    model.add(tf.keras.layers.Reshape((window_half*2+1, element_size, 1),))
-    model.add(Conv2D(64, (2, 2), strides=(2, 2),padding = 'same', activation='relu', input_shape=(window_half*2+1, element_size, 1)))
+    model.add(tf.keras.layers.Reshape((-1, element_size, 1),))
+    model.add(Dense(100, activation='relu'))
+    model.add(Conv2D(100, (2, 2), strides=(2, 2),padding = 'same', activation='relu', input_shape=(window_half*2+1, element_size, 1)))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=(1, 1)))
+    #Conv2D(filters = 64, kernel_size = 2, strides = 1, padding = 'same')
     model.add(Flatten())
     model.add(Dropout(0.1))
-    model.add(Dense(100, activation='sigmoid'))
+    model.add(Dense(100, activation='sigmoid', kernel_regularizer=regularizers.L2(l2=0.01), bias_regularizer=regularizers.L2(l2=0.01)))
     model.add(Dense(num_classes, activation='softmax'))  # num_classes = 2
     model.compile(optimizer=keras.optimizers.Adam(lr = lr), loss='categorical_crossentropy',  metrics=['accuracy']) # lr = 0.00001
     return model
